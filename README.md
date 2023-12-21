@@ -16,7 +16,7 @@ It is an reference implementation aimed at Moodle testers.
 2.) cd into the project folder and create an empty folder called *moodledata*. Make it writeable by www-data.
 
 3.) Place your favourite moodle version in a folder called *moodle*. You can get it from [moodle.org](https://download.moodle.org/releases/latest/). Since the PHP container is PHP8.1, you will need
-to use a recent version of Moodle, V4.1 or later.
+to use a recent version of Moodle, V4.1 or later. 
 
 4.) Make the entire moodle filetree writeable and searchable by user www-data.
 
