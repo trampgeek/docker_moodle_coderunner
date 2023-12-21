@@ -18,8 +18,12 @@ It is an reference implementation aimed at Moodle testers.
 
 4.) docker-compose up -d
 
-5.) Install moodle via browser 
-
+5.) Install moodle via browser setting:
+    * DB type: mariadb
+    * DB host: docker_moodle-db
+    * DB name: moodle
+    * DB user: moodledude
+    * DB pass: mysecretpassword
 OR
 
 via CLI (if available):
