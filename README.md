@@ -29,11 +29,6 @@ to use a recent version of Moodle, V4.1 or later.
     * DB name: moodle
     * DB user: moodledude
     * DB pass: mysecretpassword
-OR
-
-via CLI (if available):
-
-``docker exec -it docker_moodle-app  php admin/cli/install.php --lang=en --wwwroot=localhost --dataroot=/var/www/moodledata --dbtype=mariadb --dbhost=docker_moodle-db  --dbname=moodle --dbuser=moodledude --dbpass=mysecretpassword --prefix=mdl_ --fullname=jobe2.cosc.canterbury.ac.nz
 
 8.) Use the [Moodle plugin repository](https://moodle.org/plugins/) to install the plugins *qbehaviour_adaptive_adapted_for_coderunner* and *qtype_coderunner*.
 
