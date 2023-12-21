@@ -1,6 +1,7 @@
 # Create your self-built Docker Moodle testing environment + CodeRunner 
 
-This repository, forked from [dmfama20](https://github.com/Dmfama20/docker_moodle_minimal/tree/master) provides a minimal Moodle testing environment based on docker compose, with the inclusion of a JobeInABox container that can be used with the CodeRunner plugin.
+This repository, forked from [dmfama20](https://github.com/Dmfama20/docker_moodle_minimal/tree/master) provides a minimal Moodle testing environment based on docker compose, with the inclusion of a JobeInABox container to support
+the CodeRunner plugin.
 
 ## Disclaimer
 
