@@ -10,17 +10,20 @@ It is an reference implementation aimed at Moodle testers.
 ## How to start
 1.) Clone this repository inside a folder
 
-``git clone https://github.com/Dmfama20/docker_moodle_minimal.git minimal_moodle``
+``git clone https://github.com/trampgeek/docker_moodle_coderunner.git``
 
 2.) cd into the project folder and create an empty folder called *moodledata*. Make it writeable by www-data.
 
-3.) Place your favourite moodle version in a folder called *moodle*. You can get it from [moodle.org](https://download.moodle.org/releases/latest/). Since the PHP container is PHP7.4, the latest version of Moodle you can install is 4.1.x. Make the entire moodle filetree writeable and searchable by user www-data.
+3.) Place your favourite moodle version in a folder called *moodle*. You can get it from [moodle.org](https://download.moodle.org/releases/latest/). Since the PHP container is PHP8.1, you will need
+to use a recent version of Moodle, V4.1 or later.
 
-4.) docker-compose up -d
+4.) Make the entire moodle filetree writeable and searchable by user www-data.
 
-5.) Visit your moodle at http://localhost:8088
+5.) docker-compose up -d
 
-6.) Install moodle via browser, setting:
+6.) Visit your moodle at http://localhost:8088
+
+7.) Install moodle via browser, setting:
     * DB type: mariadb
     * DB host: docker_moodle-db
     * DB name: moodle
@@ -30,10 +33,15 @@ OR
 
 via CLI (if available):
 
-``docker exec -it docker_moodle-app  php admin/cli/install.php --lang=en --wwwroot=localhost --dataroot=/var/www/moodledata --dbtype=mariadb --dbhost=docker_moodle-db  --dbname=moodle --dbuser=moodledude --dbpass=mysecretpassword --prefix=mdl_ --fullname=moodle_minimal --shortname=moodle_minimal --adminpass=test --adminemail=admin@moodle.invalid --agree-license --non-interactive``
+``docker exec -it docker_moodle-app  php admin/cli/install.php --lang=en --wwwroot=localhost --dataroot=/var/www/moodledata --dbtype=mariadb --dbhost=docker_moodle-db  --dbname=moodle --dbuser=moodledude --dbpass=mysecretpassword --prefix=mdl_ --fullname=jobe2.cosc.canterbury.ac.nz
 
+8.) Use the [Moodle plugin repository](https://moodle.org/plugins/) to install the plugins *qbehaviour_adaptive_adapted_for_coderunner* and *qtype_coderunner*.
 
-7.) Use the Moodle plugin repository to install the plugins *qbehaviour_adaptive_adapted_for_coderunner* and *qtype_coderunner*.
+9.) Configure the CodeRunner question type, setting the Jobe server to *docker-moodle-jobe*
 
-8.) Configure the CodeRunner question type, setting the Jobe host to *docker-moodle-jobe*
+10.) Go to Sit administration > General > HTTP Security and delete the following entries from the *cURL blocked hosts list*:
+    * 127.0.0.1
+    * 192.168.0.0/16
+    * localhost
 
+11.) Start writing CodeRunner questions!
