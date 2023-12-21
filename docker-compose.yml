@@ -46,6 +46,7 @@ services:
            - docker_moodle
    docker-moodle-jobe:
       image: trampgeek/jobeinabox
+      container_name: docker_moodle-jobe
       restart: always
       networks:
         - docker_jobe

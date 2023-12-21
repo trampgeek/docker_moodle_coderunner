@@ -12,13 +12,15 @@ It is an reference implementation aimed at Moodle testers.
 
 ``git clone https://github.com/Dmfama20/docker_moodle_minimal.git minimal_moodle``
 
-2.) cd into the project folder and create an empty folder called *moodledata*
+2.) cd into the project folder and create an empty folder called *moodledata*. Make it writeable by www-data.
 
-3.) Place your favourite moodle version in a folder called *moodle*. You can get it from [moodle.org](https://download.moodle.org/releases/latest/). Since the PHP container is PHP7.4, the latest version of Moodle you can install is 4.1.x
+3.) Place your favourite moodle version in a folder called *moodle*. You can get it from [moodle.org](https://download.moodle.org/releases/latest/). Since the PHP container is PHP7.4, the latest version of Moodle you can install is 4.1.x. Make the entire moodle filetree writeable and searchable by user www-data.
 
 4.) docker-compose up -d
 
-5.) Install moodle via browser setting:
+5.) Visit your moodle at http://localhost:8088
+
+6.) Install moodle via browser, setting:
     * DB type: mariadb
     * DB host: docker_moodle-db
     * DB name: moodle
@@ -30,7 +32,6 @@ via CLI (if available):
 
 ``docker exec -it docker_moodle-app  php admin/cli/install.php --lang=en --wwwroot=localhost --dataroot=/var/www/moodledata --dbtype=mariadb --dbhost=docker_moodle-db  --dbname=moodle --dbuser=moodledude --dbpass=mysecretpassword --prefix=mdl_ --fullname=moodle_minimal --shortname=moodle_minimal --adminpass=test --adminemail=admin@moodle.invalid --agree-license --non-interactive``
 
-6.) Visit your moodle at http://localhost:8088
 
 7.) Use the Moodle plugin repository to install the plugins *qbehaviour_adaptive_adapted_for_coderunner* and *qtype_coderunner*.
 
