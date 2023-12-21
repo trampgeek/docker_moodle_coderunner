@@ -13,6 +13,7 @@ services:
        - ./conf/local.ini:/usr/local/etc/php/php.ini
      networks:
        - docker_moodle
+       - docker_jobe
      depends_on:
        - docker_moodle-db
    docker_moodle-web:
@@ -43,9 +44,15 @@ services:
            - "3306"
      networks:
            - docker_moodle
-
+   docker-moodle-jobe:
+      image: trampgeek/jobeinabox
+      restart: always
+      networks:
+        - docker_jobe
 
 networks:
   docker_moodle:
+      external: false
+  docker_jobe:
       external: false
 
