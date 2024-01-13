@@ -15,7 +15,7 @@ services:
        - docker_moodle
        - docker_jobe
      depends_on:
-       - docker_moodle-db
+       - docker-moodle-db
    docker-moodle-web:
      image: nginx
      restart: always
